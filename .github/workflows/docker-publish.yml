@@ -45,8 +45,6 @@ jobs:
         file: Dockerfile
         push: true
         tags: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
-        build-args: |
-          TOFU_VERSION=${{ env.VERSION }}
 
     - name: Generate artifact attestation
       uses: actions/attest-build-provenance@v1

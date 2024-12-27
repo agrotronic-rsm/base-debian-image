@@ -1,6 +1,6 @@
-FROM debian:bookwork-slim
+FROM debian:bookworm-slim
 
-# Устанавливаем необходимые зависимости и OpenTofu
+# Устанавливаем необходимые зависимости
 RUN apt-get update && apt-get install -y \
     bash \
     ca-certificates \
