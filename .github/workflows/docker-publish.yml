@@ -44,13 +44,13 @@ jobs:
         context: .
         file: Dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/${{ IMAGE_NAME }}:${{ env.VERSION }}
+        tags: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
         build-args: |
           TOFU_VERSION=${{ env.VERSION }}
 
     - name: Generate artifact attestation
       uses: actions/attest-build-provenance@v1
       with:
-        subject-name: ghcr.io/${{ github.repository_owner }}/${{ IMAGE_NAME }}
+        subject-name: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
         subject-digest: ${{ steps.push.outputs.digest }}
         push-to-registry: true
